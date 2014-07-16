@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="css/ratings.css">
+<style>
+    .multi-container {
+        clear: both;
+        margin: 25px;
+    }
+</style>
+<script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+<script src="third-party/mustache.js"></script>
+<script type="text/javascript" src="js/ratings.js"></script>
+<script id="ratingsTemplate" type="text/x-mustache-template">
+<div id="rating_container">
+    <div class="rate-star-cont">
+        <div id="rating_widget" class="rating-widget" data-objid="{{ratingObjId}}">
+            <div class="rating-sprite rating-empty">
+                <div class="rating-sprite rating-full"
+                     style="width:{{ratingUserValuePct}}%"></div>
+            </div>
+        </div>
+        <div class="rate-user-text">{{^ratingUserValue}}Rate it{{/ratingUserValue}}{{#ratingUserValue}}Your Rating{{/ratingUserValue}}</div>
+    </div>
+    <div class="rate-text-cont">
+        <div class="ratings-value">{{ratingText}}</div>
+        <div class="ratings-user">
+            <span id="rate_user_cont">{{ratingUsers}}</span> Users
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/javascript">
+YCustom.use("node", function(Y) {
+    var data = [
+        {ratingObjId: 1, ratingUserValuePct: 0, ratingUserValue: false, ratingText: 4.5, ratingUsers: 500},
+        {ratingObjId: 2, ratingUserValuePct: 50, ratingUserValue: true, ratingText: 4.8, ratingUsers: 800}
+    ];
+    var template = Y.one("#ratingsTemplate").getHTML();
+    var markup = "";
+    var node = "";
+    var pageBody = Y.one("body");
+
+    Y.each(data, function(datum) {
+        markup = Mustache.render(template, datum);
+        node = Y.Node.create('<div id="cont_' + datum.ratingObjId + '" class="multi-container">' + markup + '</div>');
+        pageBody.appendChild(node);
+        Y.fire('global-ratings', {cont: "cont_" + datum.ratingObjId});
+    });
+});
+</script>

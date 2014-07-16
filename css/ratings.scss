@@ -1,0 +1,56 @@
+$contBorder: 1px solid #ddd;
+
+#rating_container {
+    .rate-star-cont {
+        float: left;
+    }
+
+    .rating-widget {
+        float: left;
+        width: 150px;
+        border: $contBorder;
+        padding: 5px;
+    }
+
+    .rating-sprite {
+        background: url("../images/ratings.png") no-repeat;
+    }
+
+    .rating-empty {
+        height: 20px;
+        width: 150px;
+        position: relative;
+        background-position: 0px -20px;
+        &:hover {
+            cursor: pointer;
+        }
+        .rating-full {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-position: 0px 0px;
+        }
+    }
+
+    .rate-text-cont {
+        margin-left: 10px;
+        display: inline-block;
+    }
+
+    .ratings-value {
+        border: $contBorder;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        color: #fca000;
+        font-weight: bold;
+        width: 30px;
+        text-align: center;
+    }
+
+    .ratings-user {
+        font-weight: bold;
+        font-size: 12px;
+    }
+}

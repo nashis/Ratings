@@ -1,0 +1,37 @@
+#rating_container .rate-star-cont {
+  float: left; }
+#rating_container .rating-widget {
+  float: left;
+  width: 150px;
+  border: 1px solid #dddddd;
+  padding: 5px; }
+#rating_container .rating-sprite {
+  background: url("../images/ratings.png") no-repeat; }
+#rating_container .rating-empty {
+  height: 20px;
+  width: 150px;
+  position: relative;
+  background-position: 0px -20px; }
+  #rating_container .rating-empty:hover {
+    cursor: pointer; }
+  #rating_container .rating-empty .rating-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-position: 0px 0px; }
+#rating_container .rate-text-cont {
+  margin-left: 10px;
+  display: inline-block; }
+#rating_container .ratings-value {
+  border: 1px solid #dddddd;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  color: #fca000;
+  font-weight: bold;
+  width: 30px;
+  text-align: center; }
+#rating_container .ratings-user {
+  font-weight: bold;
+  font-size: 12px; }

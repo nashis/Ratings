@@ -1,0 +1,17 @@
+<div id="rating_container">
+    <div class="rate-star-cont">
+        <div id="rating_widget" class="rating-widget" data-objid="{{ratingObjId}}">
+            <div class="rating-sprite rating-empty">
+                <div class="rating-sprite rating-full"
+                     style="width:{{ratingUserValuePct}}%"></div>
+            </div>
+        </div>
+        <div class="rate-user-text">{{^ratingUserValue}}Rate it{{/ratingUserValue}}{{#ratingUserValue}}Your Rating{{/ratingUserValue}}</div>
+    </div>
+    <div class="rate-text-cont">
+        <div class="ratings-value">{{ratingText}}</div>
+        <div class="ratings-user">
+            <span id="rate_user_cont">{{ratingUsers}}</span> Users
+        </div>
+    </div>
+</div>
